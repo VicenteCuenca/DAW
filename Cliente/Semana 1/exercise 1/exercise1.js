@@ -6,6 +6,14 @@
  */
 console.log("EXERCISE 1 - PART 1");
 
+let stringLongest = (s1,s2)=>{
+    if(s1.length > s2.length) return`${s1} is longer than ${s2}`; 
+    if(s1.length < s2.length) return`${s2} is longer than ${s1}`; 
+    return`${s1} is as long as ${s2}`; }
+
+
+console.log(stringLongest("Coconut","house"));
+
 /**
  * Part 2
  * Create an array with different value types (number, boolean, string, ...).
