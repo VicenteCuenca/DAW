@@ -23,6 +23,14 @@ console.log(stringLongest("Coconut","house"));
  */
 console.log("EXERCISE 1 - PART 2");
 
+let a = [4, true, 33, 1,"number", 9, 54];
+let array = new Array(a.filter(num => !isNaN(num)).map(num => num*1));
+
+console.log(array);
+
+// let a = [4, 21, 33, 12, 9, 54, NaN];
+// console.log(a.filter(num => !isNaN(num)));
+
 
 /**
  * Part 3
@@ -32,6 +40,16 @@ console.log("EXERCISE 1 - PART 2");
  * Call this function several times, omitting parameters or sending not numeric values.
  */
 console.log("EXERCISE 1 - PART 3");
+function convertTry( product = "Generic product", price = "100", tax = "21"){
+    product = product.toString();
+    if(!Number(price)) console.error("Price is not a number.");
+    if(!Number(tax)) console.error("Tax is not a number.");
+}
+convertTry("patatas",1);
+convertTry("patatas",1,"23");
+convertTry("patatas",1,"two");
+convertTry("patatas");
+convertTry();
 
 
 /**
