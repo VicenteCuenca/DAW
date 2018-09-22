@@ -62,6 +62,28 @@ convertTry();
  * On each change, show the resulting array with its elements separated by '=>' (don't use any loop).
  */
 console.log("EXERCISE 1 - PART 4");
+ let P4 = [4, 21, 33, 12];
+
+console.log(P4.join(" => "));
+
+ P4.unshift(1);
+ P4.unshift(2);
+
+ console.log(P4.join(" => "));
+
+ P4.push(99);
+ P4.push(100);
+
+ console.log(P4.join(" => "));
+
+ P4.splice(3,4,5);
+
+ console.log(P4.join(" => "));
+ 
+ P4.splice(P4.length-1,0,98);
+ P4.splice(P4.length-1,0,97);
+
+ console.log(P4.join(" => "));
 
 
 /**
@@ -71,12 +93,17 @@ console.log("EXERCISE 1 - PART 4");
  */
 console.log("EXERCISE 1 - PART 5");
 
+let P5 = ["Hola", "ola", "la", "a", " ", "Vince"];
+console.log(P5.reduce((text,t)=>text+=t.substring(0, 1),""));
+
+
 /**
  * Part 6
  * Create an array with several strings. Using the reduce method, return the total length of all the strings.
  */
 console.log("EXERCISE 1 - PART 6");
-
+let P6 = ["Hola", "ola", "la", "a", " ", "Vince"];
+console.log(P6.reduce((sizeLength,t)=>sizeLength+=t.length,0));
 
 /**
  * Part 7
@@ -87,6 +114,26 @@ console.log("EXERCISE 1 - PART 6");
  */
 console.log("EXERCISE 1 - PART 7");
 
+function functionP7(arr){
+    let[first =1,second =2, third=3]=arr;
+    console.log("First: "+first);
+    console.log("Second: "+second);
+    console.log("Third: "+third);
+    console.log("\n");
+}
+let P7 = [10,20, 30, 4, 5, 6];
+functionP7(P7);
+
+P7 = [,20, 30, 4, 5, 6];
+functionP7(P7);
+
+P7 = [,, 30, 4, 5, 6];
+functionP7(P7);
+
+P7 = [,,, 4, 5, 6];
+functionP7(P7);
+
+
 
 /**
  * Part 8
@@ -96,6 +143,21 @@ console.log("EXERCISE 1 - PART 7");
  */
 console.log("EXERCISE 1 - PART 8");
 
+function functionP8(...number){
+    console.log(number);
+    let odd = "";
+    let even = "";
+
+    number.forEach(num =>{
+    if(num%2==0) even+=" "+num;
+    else odd+=" "+num;
+    },"")
+    console.log(odd);
+    console.log(even);
+
+}
+
+functionP8(1,2,3,4,5,6,7,8);
 
 /**
  * Part 9
@@ -104,11 +166,45 @@ console.log("EXERCISE 1 - PART 8");
  * Example: Peter (7.60 - 2.50 - 6.25 - 9.00). Average: 6.34
  */
 console.log("EXERCISE 1 - PART 9");
+// let person1 = {name:"Peter", exam:};
+// let person2 = {name:"Petra", exam:};
+
+let map = new Map();
+map.set("Peter", [7.60,2.50,6.25,9]);
+map.set("Petra", [8.60,8.50,8.25,9]);
+
+
+for (let entry of map) {
+    console.log(`${entry[0]} (${entry[1].join(",")}). Average: ${entry[1].reduce((average,num)=>average+=num,0)/entry[1].length}`);
+}
+
+
 
 /**
  * Create a function that receives an array, deletes its duplicated values and prints them.
  * Create a Set object to delete the duplicated values.
  */
-console.log("EXERCISE 1 - PART 10");
 
+
+console.log("EXERCISE 1 - PART 10");
+function P10(arr){
+    let set = new Set();
+
+    arr.forEach(name =>{ //No he entendido si hay que mostrar los valores que hay que borrar o el array que se queda.
+     if(!set.has(name))  //Asi que he hecho los dos. Pero he comentado la creacion del set con el array por parametros.
+            set.add(name);
+        else
+            console.log(name);
+
+    });
+
+    // let nameSet = new Set(arr);
+    // console.log(nameSet);
+
+    set.has
+}
+
+arr=["Vince", "Vince", "Miri", "Paco", "Pepe"];
+
+P10(arr);
 
